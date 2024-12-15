@@ -1,0 +1,116 @@
+@use "variables" as * ;
+@use 'sass:math';
+
+.grid,
+.grid\:wide,
+.grid\:xxl,
+.grid\:xl,
+.grid\:lg,
+.grid\:md,
+.grid\:sm {
+  width: 100%;
+  padding-right: calc($container-padding-x * .5);
+  padding-left: calc($container-padding-x * .5);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// Loop for applying max-width at breakpoints
+@each $breakpoint-title, $breakpoint-value in $grid-breakpoints {
+  @each $container-title, $container-width in $container-max-widths {
+    @if $breakpoint-title == $container-title {
+      @media screen and (min-width: #{$breakpoint-value}) {
+        .grid, 
+        .grid\:#{$breakpoint-title} {
+          max-width: #{$container-width};
+        }
+      }
+    }
+  }
+}
+
+// Grid row styles
+.grid\:row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * 0);
+  margin-right: calc(-0.5 * $grid-gutter-width);
+  margin-left: calc(-0.5 * $grid-gutter-width);
+}
+
+.grid\:row > * {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc($grid-gutter-width * 0.5);
+  padding-left: calc($grid-gutter-width * 0.5);
+  margin-top: 0;
+}
+
+// Column classes based on grid columns
+@each $breakpoint-title, $breakpoint-value in $grid-breakpoints {
+  @if $breakpoint-value == 0 {
+    @for $i from 1 through $grid-columns {
+      .column\:#{$i} {
+        flex: 0 0 auto;
+        width: math.div($i, $grid-columns) * 100%;
+      }
+    }
+    .column\:auto {
+      flex: 0 0 auto;
+      width: auto;
+    }
+  } @else {
+    @media screen and (min-width: #{$breakpoint-value}) {
+      @for $i from 1 through $grid-columns {
+        .column\:#{$breakpoint-title}\:#{$i} {
+          flex: 0 0 auto;
+          width: math.div($i, $grid-columns) * 100%;
+        }
+      }
+      .column\:#{$breakpoint-title}\:auto {
+        flex: 0 0 auto;
+        width: auto;    
+      }
+    }
+  }
+}
+
+// Push class based on grid columns
+@each $breakpoint-title, $breakpoint-value in $grid-breakpoints {
+  @if $breakpoint-value == 0 {
+    @for $i from 1 through $grid-columns {
+      .push\:#{$i} {
+        margin-left: math.div($i, $grid-columns) * 100%;
+      }
+    }
+  } @else {
+    @media screen and (min-width: #{$breakpoint-value}) {
+      @for $i from 1 through $grid-columns {
+        .push\:#{$breakpoint-title}\:#{$i} {
+          margin-left: math.div($i, $grid-columns) * 100%;
+        }
+      }
+    }
+  }
+}
+
+// Pull class based on grid columns
+@each $breakpoint-title, $breakpoint-value in $grid-breakpoints {
+  @if $breakpoint-value == 0 {
+    @for $i from 1 through $grid-columns {
+      .pull\:#{$i} {
+        margin-left: -1 * math.div($i, $grid-columns) * 100%;
+      }
+    }
+  } @else {
+    @media screen and (min-width: #{$breakpoint-value}) {
+      @for $i from 1 through $grid-columns {
+        .pull\:#{$breakpoint-title}\:#{$i} {
+          margin-left: -1 * math.div($i, $grid-columns) * 100%;
+        }
+      }
+    }
+  }
+}

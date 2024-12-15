@@ -1,0 +1,164 @@
+//Grid Variables
+$grid-breakpoint-xs: 0;	
+$grid-breakpoint-sm: 576px;	
+$grid-breakpoint-md: 768px;	
+$grid-breakpoint-lg: 992px;	
+$grid-breakpoint-xl: 1200px;
+$grid-breakpoint-xxl: 1400px;
+
+$grid-breakpoints: (
+    "xs": 0,	
+    "sm": 576px,
+    "md": 768px,
+    "lg": 992px,
+    "xl": 1200px,
+    "xxl": 1400px
+) !default;
+
+$container-width-sm: 540px;
+$container-width-md: 720px;
+$container-width-lg: 960px;
+$container-width-xl: 1140px;
+$container-width-xxl: 1320px;
+
+$container-max-widths: (
+  sm: $container-width-sm,
+  md: $container-width-md,
+  lg: $container-width-lg,
+  xl: $container-width-xl,
+  xxl: $container-width-xxl
+) !default;
+
+$grid-columns:                12 !default;
+$grid-gutter-width:           1.5rem !default;
+$grid-row-columns:            6 !default;
+$container-padding-x: $grid-gutter-width !default;
+
+
+//Spacers
+$spacer-base:                 1rem;
+$spacer-modifier:             1.250;
+$spacer-1:                    $spacer-base;
+$spacer-2:                    $spacer-1 * $spacer-modifier;
+$spacer-3:                    $spacer-2 * $spacer-modifier;
+$spacer-4:                    $spacer-3 * $spacer-modifier;
+$spacer-5:                    $spacer-4 * $spacer-modifier;
+$spacer-6:                    $spacer-5 * $spacer-modifier;
+$spacer-7:                    $spacer-6 * $spacer-modifier;
+$spacer-8:                    $spacer-7 * $spacer-modifier;
+$spacer-9:                    $spacer-8 * $spacer-modifier;
+$spacer-10:                   $spacer-9 * $spacer-modifier;
+
+$spacer-map: (
+    0: 0,
+    1: $spacer-1,
+    2: $spacer-2,
+    3: $spacer-3,
+    4: $spacer-4,
+    5: $spacer-5,
+    6: $spacer-6,
+    7: $spacer-7,
+    8: $spacer-8,
+    9: $spacer-9,
+    10: $spacer-10,
+    "auto": auto,
+) !default;
+
+$spacing-type: (padding, margin) !default;
+$axis: (top, right, bottom, left) !default;
+
+
+// Typography
+$font-size-base:          1rem;
+$font-weight-base:        400;
+$font-family-base:        "Inter";
+$font-family-headline:    "Orbit";
+$font-family-display:     $font-family-headline;
+$font-line-height-base:   1.5;
+
+$link-weight:             700;
+$link-decoration:         underline;
+$link-color:              inherit;
+
+
+$font-families: (
+  "base": $font-family-base,
+  "headline": $font-family-headline,
+  "display": $font-family-display,
+) !default;
+
+
+$heading-font-sizes: (
+  1: clamp(4rem, 5vw + 1rem, 5rem),
+  2: clamp(3.2rem, 5vw + 1rem, 4rem),
+  3: clamp(2.56rem, 5vw + 1rem, 3.2rem),
+  4: clamp(1.6rem, 5vw + 1rem, 2.56rem),
+  5: clamp(1.28rem, 5vw + 1rem, 1.6rem),
+  6: clamp(1rem, 5vw + 1rem, 1.28rem),
+) !default;
+
+$heading-line-height:       1.2;
+$heading-font-weight:       $font-weight-base;
+
+$text-aligns: (left, right, center);
+
+//Displays
+$display-options: (
+  block: block,
+  inline: inline,
+  inline-block: inline-block,
+  flex: flex,
+  grid: grid,
+  inline-flex: inline-flex,
+  inline-grid: inline-grid,
+  none: none,
+  list-item: list-item,
+  table: table,
+  table-row: table-row,
+  table-cell: table-cell,
+  table-column: table-column,
+  table-column-group: table-column-group,
+  table-footer-group: table-footer-group,
+  table-header-group: table-header-group,
+  run-in: run-in,
+  contents: contents
+);
+
+$flex-align-options: (
+  align-items: (
+    flex-start: flex-start,
+    flex-end: flex-end,
+    center: center,
+    baseline: baseline,
+    stretch: stretch
+  ),
+  align-self: (
+    auto: auto,
+    flex-start: flex-start,
+    flex-end: flex-end,
+    center: center,
+    baseline: baseline,
+    stretch: stretch
+  ),
+  justify-content: (
+    flex-start: flex-start,
+    flex-end: flex-end,
+    center: center,
+    space-between: space-between,
+    space-around: space-around,
+    space-evenly: space-evenly
+  ),
+  justify-items: (
+    start: start,
+    end: end,
+    center: center,
+    stretch: stretch
+  ),
+  justify-self: (
+    auto: auto,
+    start: start,
+    end: end,
+    center: center,
+    stretch: stretch
+  )
+);

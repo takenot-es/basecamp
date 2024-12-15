@@ -1,0 +1,47 @@
+@use "variables" as * ;
+@use 'sass:math';
+
+@each $breakpoint-title, $breakpoint-value in $grid-breakpoints {
+    @if $breakpoint-value == 0 {
+      // If the breakpoint value is 0, no media query, just apply all display options.
+      @each $display-title, $display-value in $display-options {
+        .display\:#{$display-title} {
+          display: #{$display-value};
+        }
+      }
+    } @else {
+      // For breakpoints that are not 0, apply media query
+      @media screen and (min-width: #{$breakpoint-value}) {
+        @each $display-title, $display-value in $display-options {
+          .display\:#{$breakpoint-title}\:#{$display-title} {
+            display: #{$display-value};
+          }
+        }
+      }
+    }
+  }
+  
+
+  @each $breakpoint-title, $breakpoint-value in $grid-breakpoints {
+    @if $breakpoint-value == 0 {
+      // If the breakpoint value is 0, no media query, just apply all flex alignment options
+      @each $property, $values in $flex-align-options {
+        @each $value-title, $value in $values {
+          .#{$property}\:#{$value-title} {
+            #{$property}: #{$value};
+          }
+        }
+      }
+    } @else {
+      // For breakpoints that are not 0, apply media query
+      @media screen and (min-width: #{$breakpoint-value}) {
+        @each $property, $values in $flex-align-options {
+          @each $value-title, $value in $values {
+            .#{$property}\:#{$breakpoint-title}\:#{$value-title} {
+              #{$property}: #{$value};
+            }
+          }
+        }
+      }
+    }
+  }

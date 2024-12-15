@@ -1,0 +1,59 @@
+@use "variables" as * ;
+@use 'sass:math';
+
+@each $breakpoint-title, $breakpoint-value in $grid-breakpoints {
+    // Define media query for the current breakpoint
+    @if $breakpoint-value != 0 {
+        @media screen and (min-width: #{$breakpoint-value}) {
+            @each $spacer-title, $spacer-value in $spacer-map {
+                @each $spacer-type in $spacing-type {
+                    @each $spacer-axis in $axis {
+                        // Vertical spacers (top/bottom)
+                        @if $spacer-axis == "top" or $spacer-axis == "bottom" {
+                            .#{$spacer-type}\:#{$breakpoint-title}\:#{$spacer-title}, 
+                            .#{$spacer-type}\:#{$spacer-axis}\:#{$breakpoint-title}\:#{$spacer-title}, 
+                            .#{$spacer-type}\:vertical\:#{$breakpoint-title}\:#{$spacer-title} {
+                                #{$spacer-type}-#{$spacer-axis}: #{$spacer-value};
+                            }
+                        }
+
+                        // Horizontal spacers (left/right)
+                        @if $spacer-axis == "left" or $spacer-axis == "right" {
+                            .#{$spacer-type}\:#{$breakpoint-title}\:#{$spacer-title}, 
+                            .#{$spacer-type}\:#{$spacer-axis}\:#{$breakpoint-title}\:#{$spacer-title}, 
+                            .#{$spacer-type}\:horizontal\:#{$breakpoint-title}\:#{$spacer-title} {
+                                #{$spacer-type}-#{$spacer-axis}: #{$spacer-value};
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // Default styles (no media query, for smaller screen sizes)
+    @else {
+        @each $spacer-title, $spacer-value in $spacer-map {
+            @each $spacer-type in $spacing-type {
+                @each $spacer-axis in $axis {
+                    // Vertical spacers (top/bottom)
+                    @if $spacer-axis == "top" or $spacer-axis == "bottom" {
+                        .#{$spacer-type}\:#{$spacer-title}, 
+                        .#{$spacer-type}\:#{$spacer-axis}\:#{$spacer-title}, 
+                        .#{$spacer-type}\:vertical\:#{$spacer-title} {
+                            #{$spacer-type}-#{$spacer-axis}: #{$spacer-value};
+                        }
+                    }
+
+                    // Horizontal spacers (left/right)
+                    @if $spacer-axis == "left" or $spacer-axis == "right" {
+                        .#{$spacer-type}\:#{$spacer-title}, 
+                        .#{$spacer-type}\:#{$spacer-axis}\:#{$spacer-title}, 
+                        .#{$spacer-type}\:horizontal\:#{$spacer-title} {
+                            #{$spacer-type}-#{$spacer-axis}: #{$spacer-value};
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

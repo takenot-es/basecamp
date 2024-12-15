@@ -1,0 +1,56 @@
+@use "variables" as * ;
+@use 'sass:math';
+
+body {
+    font-family: $font-family-base;
+    font-weight: $font-weight-base;
+    line-height: $font-line-height-base;
+}
+
+p {
+    font-size: $font-size-base;
+    margin-bottom: $font-size-base;
+}
+
+a {
+    font-weight: $link-weight;
+    color: $link-color;
+    text-decoration: $link-decoration;
+}
+
+
+@each $type-title, $type-size in $heading-font-sizes {
+    h#{$type-title}, 
+    .h#{$type-title},
+    .fontsize\:#{$type-title} {
+        font-family: $font-family-headline;
+        font-size: #{$type-size};
+        line-height: $heading-line-height;
+        font-weight: $heading-font-weight;
+        margin-bottom: $spacer-2;
+    } 
+}
+
+@each $font-title, $font-family in $font-families {
+    .fontfamily\:#{$font-title} {
+        font-family: "#{$font-family}";
+    }
+}
+
+@each $breakpoint-title, $breakpoint-value in $grid-breakpoints {
+    @if $breakpoint-value == 0 {
+        @each $alignment in $text-aligns {
+            .text\:#{$alignment} {
+                text-align: #{$alignment};
+            }
+        }
+    } @else {
+        @media screen and (min-width: #{$breakpoint-value}) {
+            @each $alignment in $text-aligns {
+                .text\:#{$breakpoint-title}\:#{$alignment} {
+                    text-align: #{$alignment};
+                }
+            }
+        }
+    }
+}
