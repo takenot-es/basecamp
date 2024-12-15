@@ -72,8 +72,8 @@ $axis: (top, right, bottom, left) !default;
 $font-size-base:          1rem;
 $font-weight-base:        400;
 $font-family-base:        "Inter";
-$font-family-headline:    "Orbit";
-$font-family-display:     $font-family-headline;
+$font-family-headline:    null;
+$font-family-display:     null;
 $font-line-height-base:   1.5;
 
 $link-weight:             700;
@@ -101,6 +101,10 @@ $heading-line-height:       1.2;
 $heading-font-weight:       $font-weight-base;
 
 $text-aligns: (left, right, center);
+$font-weights: (light, normal, bold);
+$font-styles: (normal, italic);
+
+
 
 //Displays
 $display-options: (

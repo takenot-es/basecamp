@@ -23,7 +23,6 @@ a {
     h#{$type-title}, 
     .h#{$type-title},
     .fontsize\:#{$type-title} {
-        font-family: $font-family-headline;
         font-size: #{$type-size};
         line-height: $heading-line-height;
         font-weight: $heading-font-weight;
@@ -31,11 +30,6 @@ a {
     } 
 }
 
-@each $font-title, $font-family in $font-families {
-    .fontfamily\:#{$font-title} {
-        font-family: "#{$font-family}";
-    }
-}
 
 @each $breakpoint-title, $breakpoint-value in $grid-breakpoints {
     @if $breakpoint-value == 0 {
@@ -54,3 +48,25 @@ a {
         }
     }
 }
+
+@for $i from 1 through 9 {
+    $value: $i * 100;
+    .fontweight\:#{$i} {
+        font-weight: #{$value};
+    }
+}
+
+@each $font-weight in $font-weights {
+    .fontweight\:#{$font-weight} {
+        font-weight: #{$font-weight};
+    }
+}
+
+strong {
+    font-weight: bold;
+}
+
+.fontstyle\:italic, em {
+    font-style: italic;
+}
+
