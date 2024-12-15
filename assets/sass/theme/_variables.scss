@@ -1,0 +1,15 @@
+$font-base: "Inter";
+$font-headline: "Orbit";
+
+
+$primary: #000;
+$secondary: #FD3478;
+$light: #A2A2A2;
+$white: #fff;
+
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "light": $light,
+    "white": $white
+) !default;

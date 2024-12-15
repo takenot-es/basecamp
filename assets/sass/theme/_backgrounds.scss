@@ -1,0 +1,7 @@
+@use "variables" as *;
+
+@each $color-title, $color-value in $theme-colors {
+    .background\:#{$color-title} {
+        background-color: #{$color-value};
+    }
+}
