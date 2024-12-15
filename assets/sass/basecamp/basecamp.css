@@ -12,11 +12,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-img, picture, video, canvas, svg {
-  display: block;
-  max-width: 100%;
-}
-
 input, button, textarea, select {
   font: inherit;
 }
@@ -5164,6 +5159,19 @@ strong {
   .justify-self\:xxl\:stretch {
     justify-self: stretch;
   }
+}
+.image\:responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+.figure\:cover {
+  object-fit: cover;
+}
+.figure\:cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=basecamp.css.map */
