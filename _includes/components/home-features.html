@@ -1,0 +1,31 @@
+<section class="padding:vertical:6">
+    <div class="grid">
+        <div class="grid:row">
+            <div class="column:md:8 margin:horizontal:auto">
+                <div class="grid">
+                    <div class="grid:row">
+                        {% for item in site.data.features %}
+                        <div class="column:md:6 margin:top:2">
+                            <h5>
+                                {{ item.title }}
+                            </h5>
+                            <p>
+                                {{ item.content }}
+                            </p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="grid">
+        <div class="grid:row">
+            <div class="column:auto margin:horizontal:auto">
+                <a href="{{site.live_url}}assets/downloads/basecamp_dist.zip" class="button">
+                    Download here
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

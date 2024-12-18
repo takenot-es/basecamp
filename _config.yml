@@ -2,7 +2,8 @@ title: Basecamp CSS
 email: ryan@takenot.es
 description: "Basecamp in a minimally opinionated CSS Framework. It's basically just a column grid system with typesizes, responsive images, and spacing."
 baseurl: ""
-url: ""
+url: 
+live_url: "https://takenot-es.github.io/basecamp/"
 twitter_username: jekyllrb
 github_username:  takenot-es
 
@@ -12,7 +13,7 @@ plugins:
 
 
 sass:
-  sass_dir: "/assets/sass/theme/"
+  sass_dir: "/assets/sass/theme/theme.scss"
 
 # Exclude from processing.
 # The following items will not be processed, by default.

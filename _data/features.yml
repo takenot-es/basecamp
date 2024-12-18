@@ -1,0 +1,10 @@
+- title: Grid System
+  content: Because let’s face it, we all need to arrange things in neat columns and rows. This framework provides a flexible grid system with just enough magic to make your layout almost look like you know what you're doing. Whether it's a 12-column grid or a handful of responsive breakpoints, it’s easy and functional.
+- title: Type Sizes
+  content: We’ve provided a few sensible font sizes (for headings, body text, and a couple of other options) because your content deserves to be legible. Beyond that? You’re on your own. This is minimalism, not a font library.
+- title: Displays & Flex
+  content:  No complex utilities here—just enough to flex or grid your way to victory. You’ll be aligning items in no time, even if you still don’t fully understand how flexbox works. It’s that simple.
+- title: Heights & Spacing
+  content: Because vertical alignment is hard, we’ve made sure there are some sensible height and spacing utilities to get your elements breathing without you having to write tons of custom CSS. Don’t want to deal with padding, margin, or height properties yourself? Basecamp’s got it covered with simple, reusable spacing classes. You can get everything looking halfway decent with minimal effort.
+- title: Responsive? Oh, You Bet
+  content: We’ve baked in some basic breakpoints, because responsive design shouldn’t be a guessing game. Your layouts will shift and adapt smoothly—unless you forget to use the grid. In that case, good luck.
